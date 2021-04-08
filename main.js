@@ -18,32 +18,33 @@ const playerTwo = {
     }
 
 };
+
 function createPlayer(player, obj) {
-    let divPlayer = document.createElement('div'),
-        divProgress = document.createElement('div'),
-        divCharecter = document.createElement('div'),
-        divLife = document.createElement('div'),
-        divName = document.createElement('div'),
-        img = document.createElement(`img`);
+    const divPlayer = document.createElement('div');
+    const divProgress = document.createElement('div');
+    const divCharecter = document.createElement('div');
+    const divLife = document.createElement('div');
+    const divName = document.createElement('div');
+    const img = document.createElement(`img`);
     const arena = document.querySelector(`.arenas`);
-        img.src = obj.img;
+    img.src = obj.img;
 
 
     divPlayer.classList.add(player);
     divProgress.classList.add(`progressbar`);
     divCharecter.classList.add(`character`);
     divLife.classList.add(`life`);
-    divLife.style.width= `${obj.hp}%`;
     divName.classList.add(`name`);
+
+    divLife.style.width = `${obj.hp}%`;
     divName.insertAdjacentText(`afterbegin`, obj.name);
+
     divPlayer.append(divProgress);
     divPlayer.append(divCharecter);
     divProgress.append(divLife);
     divProgress.append(divName);
     divCharecter.append(img);
-
     arena.append(divPlayer);
-    console.log(divPlayer);
 
 }
 
